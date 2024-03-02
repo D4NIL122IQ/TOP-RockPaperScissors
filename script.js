@@ -1,43 +1,34 @@
 function getComputerChoice(){
     const possibleChoice = ["rock" , "paper" ," cisor"];
-    const random = Math.floor(Math.random()*possibleChoice.length);
+    const random = Math.floor(Math.random() * possibleChoice.length);
+    console.log(possibleChoice[random])
     return possibleChoice[random];
- 
 }
 
-function playRound(){ 
+function playRound() {
     let computerSelect = getComputerChoice();
     let playerSelect = prompt("choice between paper / cisor/ rock") ;
     playerSelect = playerSelect.toLowerCase();
-    if (computerSelect == playerCounter ) {
+
+    if (computerSelect == playerSelect) {
         return null;
-    } else if( computerSelect == 'paper' && playerSelect == 'cisor'){
-        return playerCounter ++;
-    }else if (computerSelect == 'cisor' && playerSelect=='rock'){
-        console.log(playerCounter)
+    } else if ( (computerSelect == 'paper' && playerSelect == 'cisor') || (computerSelect == 'cisor' && playerSelect=='rock') || (computerSelect=='rock' && playerSelect=='paper')){
         return playerCounter++;
-    }else if(computerSelect=='rock' && playerSelect=='paper'){
-        return playerCounter++;
-    }else if(computerSelect =='cisor' && playerSelect == 'paper'){
+    }else{
         return computerCounter++;
-    }else if (computerSelect == 'paper' && playerSelect == 'rock'){
-        return computerCounter++;
-    }else if (computerSelect =='rock' && playerSelect=='cisor'){
-        return computerCounter++;
-    }       
+    }
 }
 
-function playGame(){
-    if (playerCounter == 3) {
-        return console.log("player win");
-    } else {
-        if (computerCounter ==3) {
-            return  console.log("computer win");
-        } else {
-            playRound();
-            playGame(playerCounter , computerCounter)
-        }
+function endGame() {
+    (playerCounter == 3)?console.log("player win"):console.log("computer win");
+    playerCounter = computerCounter = 0;
+}
+
+function playGame() {
+    while (playerCounter < 3 && computerCounter <3) {
+        playRound();
     }
+    endGame();
 }
 
 let playerCounter=0;
