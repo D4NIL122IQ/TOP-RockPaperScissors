@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <title> GAME</title>
 </head>
 
@@ -13,17 +12,25 @@
         <H1>Rock Paper Scissors</H1>
     </header>
 
-    <section>
-        <div class="container">
-            <div class="humain">
-
+    <div class="container">
+            <div class="player">
+                <H2>PLAYER CHOICE</H2>
+                <button class="paper"> <img src="./asset/hand-paper-regular.svg" alt="paper" width="100px"height="100px"></button>
+                <button class="cisor"><img src="./asset/hand-scissors-regular.svg" alt="cisor" width="100px"height="100px"></button>
+                <button class="rock"><img src="./asset/hand-rock-regular.svg" alt="rock" width="100px" height="100px"></button>
             </div>
 
-            <div class="robot">
-                
+            <div class="computer">
+                <h2>COMPUTER CHOICE</h2>
+                <img src="./asset/hand-paper-regular.svg" alt="paper" class="paper" width="100px" height="100px">
+                <img src="./asset/hand-scissors-regular.svg" alt="cisor" class="cisor" width="100px" height="100px">
+                <img src="./asset/hand-rock-regular.svg" alt="rock"  class="rock" width="100px" height="100px">
             </div>
-        </div>
-    </section>
-    
+
+    </div>
+    <div class="result">
+        <h2>faites votre choix pour que la partie commence</h2>
+    </div>
+    <script src="script.js" defer></script> 
 </body>
 </html>
