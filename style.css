@@ -1,3 +1,10 @@
+/* palette de couleur :
+.color1 {color: #060409;}
+.color2 {color: #332c3f;}
+.color3 {color: #706d76;}
+.color4 {color: #b7b3c3;}
+.color5 {color: #f8eef6;} */
+
 *,::after,::before{
     margin: 0px;
     padding: 0px;
@@ -5,14 +12,18 @@
 }
 
 body{
-    background-color: #666;
+    background-color: #f8eef6;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    background-color: #060409;
 }
 header h1{
     height: 50px;
     padding-top: 5px;
     color: aliceblue;
     text-align: center;
-    background-color: black
 }
 
 .container{
@@ -21,46 +32,64 @@ header h1{
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-
+    flex: 1;
 }
 
 .player , .computer{
+    background-color: #b7b3c3;
     width: 400px;
     padding: 20px;
     margin: 30px;
-    background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
+}
+
+.computer img {
+    background-color: #fff;
+}
+.player img{
+    border: 4px solid transparent;
+    border-radius: 4px;
+    position: relative;
+    animation: border-animation 4.3s infinite;
 }
 
 .result{
     width: 600px;
-    margin: 20px auto;
-    height: 70px;
+    margin: 0px auto;
+    height: 90px;
     padding: 10px;
-    background-color: #fff;
+    background-color: #b7b3c3;
     text-align: center;
     
 }
 button{ 
     background-color: white;
     border: 0px;
+    gap: 5px;
     
 }
 
 button:hover{
-    box-shadow: -11px 5px 20px 0px black;
+    box-shadow: -11px 5px 20px 0px #706d76;
 }
 
 img{
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid black;
-    
+    padding: 5px;
+    border: 5px solid black;
 }
 
 .temp{
-    box-shadow: 11px 5px 20px 0px black;
+    box-shadow: 11px 5px 20px 0px #332c3f;
 }
 
+@keyframes border-animation {
+    0% {
+        border-color: #fffbf4;
+    }
+    100% {
+        border-color: #122b5a;
+    }
+}
